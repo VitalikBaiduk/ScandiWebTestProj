@@ -1,0 +1,44 @@
+
+
+.navigation {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.elemNavigation {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    transition: 0.2s;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    padding-bottom: 30px;
+}
+
+.elemNavigation:hover {
+    color: #5ECE7B;
+}
+
+.elemNavigation:after {
+    display: block;
+    position: absolute;
+    top:30px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #5ECE7B;
+    content: "";
+    transition: width 0.2s ease-out;
+}
+
+.elemNavigation:hover:after,
+.elemNavigation:focus:after {
+    width: 100%;
+}

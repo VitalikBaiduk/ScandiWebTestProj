@@ -1,0 +1,26 @@
+.header {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.CurrAndBask {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo {
+    width: 100%;
+    max-width: 280px;
+}
+
+.CurrAndBaskInner {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
