@@ -14,6 +14,7 @@ class Categories extends React.Component<any, any> {
         };
     }
 
+
     componentDidUpdate(prevProps: Readonly<any>) {
         if (!this.props.data.loading && this.state.arrOfCategories.length === 0) {
             this.setState({arrOfCategories: this.props.data.categories})
@@ -21,7 +22,6 @@ class Categories extends React.Component<any, any> {
     }
 
     render() {
-        console.log(this.state.arrOfCategories)
         let categories = this.state.arrOfCategories.map((el: any, i: number) => {
             if (el.name === "all") {
                 return <Link key={i} to={PATH.ALL} className={s.elemNavigation}>{el.name.toUpperCase()}</Link>

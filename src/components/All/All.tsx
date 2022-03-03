@@ -6,9 +6,12 @@ class All extends React.Component<any, any> {
 
     render() {
         console.log(this.props)
+        // let product = this.props.data.category.products.map((el: any) => {
+        //     return <p>product</p>
+        // })
         return (
             <div>
-
+                {/*{product}*/}
             </div>
         );
     }
@@ -16,7 +19,7 @@ class All extends React.Component<any, any> {
 
 export default graphql(gql`
 query {
-  category(input: { title: "clothes" }) {
+  category(input: { title: "all" }) {
     name,
     products{
       gallery
