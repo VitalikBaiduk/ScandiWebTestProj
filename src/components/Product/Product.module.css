@@ -1,0 +1,21 @@
+.mainProductDiv {
+    width: 100%;
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    margin: 0 auto;
+}
+
+.product {
+    /*overflow: hidden;*/
+    width: 500px;
+    height: 600px;
+}
+
+.imagesOfProduct {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}

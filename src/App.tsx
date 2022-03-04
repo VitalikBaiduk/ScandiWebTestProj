@@ -17,18 +17,9 @@ export const PATH = {
 class App extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
-        this.state = {
-            url: "ALL"
-        };
     }
 
-    // componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<any>, snapshot?: any) {
-    //     debugger
-    //     this.setState(window.location.pathname.slice(1).toUpperCase())
-    // }
-
     render() {
-        let url = this.props.location.pathname.slice(1).toUpperCase()
         return (
 
             <div className="App">
