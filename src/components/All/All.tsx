@@ -10,14 +10,15 @@ class All extends React.Component<any, any> {
         let products
         if (!this.props.data.loading) {
             products = this.props.data.category.products.map((el: any) => {
-                return <Product img={el.gallery[0]} name={el.name} price={el.prices[0].amount}/>
+                return <Product img={el.gallery[0]}
+                                name={el.name}
+                                price={el.prices[0].amount}
+                                priceSymbol={el.prices[0].currency.symbol}/>
 
             })
         }
-
-
         console.log(this.props.data)
-        console.log(this.props.loading)
+        console.log(this.props.data.loading)
         return (
             <div className={s.mainProductDiv}>
                 {products}

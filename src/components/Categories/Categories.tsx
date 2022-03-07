@@ -13,14 +13,11 @@ class Categories extends React.Component<any, any> {
             arrOfCategories: []
         };
     }
-
-
     componentDidUpdate(prevProps: Readonly<any>) {
         if (!this.props.data.loading && this.state.arrOfCategories.length === 0) {
             this.setState({arrOfCategories: this.props.data.categories})
         }
     }
-
     render() {
         let categories = this.state.arrOfCategories.map((el: any, i: number) => {
             if (el.name === "all") {
