@@ -1,18 +1,17 @@
-let initialState = {
-    elementId: ''
-}
+import { createSlice } from '@reduxjs/toolkit';
 
-export const reducerForAllProd = (state: initialStateType = initialState, action: ActionsType): initialStateType => {
-    return state
-}
+let sliceForAllProducts = createSlice({
+    name: 'allProd',
+    initialState: {
+        products: [],
+    },
+    reducers: {
+        setProducts: (state: any, action: any) => {
+            state.products = action.payload;
+            console.log(state.products);
+        },
+    },
+});
 
-
-type setIdACType = ReturnType<typeof setIdAC>
-export const setIdAC = (id: any) => {
-    return {
-        type: "SET_ID",
-        id
-    } as const
-}
-type ActionsType = setIdACType
-type initialStateType = typeof initialState
+export const { setProducts } = sliceForAllProducts.actions;
+export const AllProductsReducer = sliceForAllProducts.reducer;

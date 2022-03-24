@@ -1,24 +1,37 @@
-import {gql, useQuery} from "@apollo/client";
-import {graphql} from '@apollo/client/react/hoc';
-// import {Categories} from "../components/Categories";
+import { gql, useQuery } from '@apollo/client';
+import { graphql } from '@apollo/client/react/hoc';
 
 export const Query = gql`
-query {
-  category {
-    name
-    products {
-      name
-      id
-      gallery
+    query {
+        category {
+            name
+            products {
+                name
+                id
+                gallery
+            }
+        }
     }
-  }
-}
-`
+`;
 
-export const QueryOfCategories = gql`
-query {
-  categories {
-    name
-  }
-}
-`
+export const QueryOfAllProducts = gql`
+    query {
+        category(input: { title: "all" }) {
+            name
+            products {
+                id
+                name
+                gallery
+                inStock
+                prices {
+                    currency {
+                        label
+                        symbol
+                    }
+                    amount
+                }
+                description
+            }
+        }
+    }
+`;

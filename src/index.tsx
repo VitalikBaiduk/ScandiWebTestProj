@@ -3,26 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
-import {BrowserRouter} from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider, useSelector } from 'react-redux';
+import store, { RootState } from './Redux/store';
+import { ProductContext } from '../src/context';
 
 let client = new ApolloClient({
-    uri: " http://localhost:4000/graphql",
-    cache: new InMemoryCache()
-})
+    uri: ' http://localhost:4000/graphql',
+    cache: new InMemoryCache(),
+});
 
-ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <ApolloProvider client={client}>
-                <App/>
-            </ApolloProvider>
-        </BrowserRouter>
-    </React.StrictMode>,
+function Main() {
+    /*let payloadData = useSelector((state: RootState) => {
+        return state.allProd.products;
+    });*/
+    console.log('state', store);
+    console.log('store getstate', store.getState());
+    return (
+        <React.StrictMode>
+            <BrowserRouter>
+                <Provider store={store}>
+                    <ApolloProvider client={client}>
+                        <App />
+                    </ApolloProvider>
+                </Provider>
+            </BrowserRouter>
+        </React.StrictMode>
+    );
+}
 
-
-    document.getElementById('root')
-);
+ReactDOM.render(<Main />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,16 +1,16 @@
-import {combineReducers, createStore} from "redux";
-import {reducerForAllProd} from "./Reducers/ReducerForAllProd";
+import { combineReducers, createStore } from 'redux';
 
-const rootReducer = combineReducers({
-    reducerForAllProd: reducerForAllProd,
-})
+import { configureStore } from '@reduxjs/toolkit';
+import { AllProductsReducer } from './Reducers/ReducerForAllProd';
 
-const store = createStore(rootReducer)
+export const store = configureStore({
+    reducer: {
+        allProd: AllProductsReducer,
+    },
+});
 
 export default store;
 
 //@ts-ignore
-window.store = store
-
-export type AppStoreType = ReturnType<typeof rootReducer>;
-
+window.store = store;
+export type RootState = ReturnType<typeof store.getState>;
